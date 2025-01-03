@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useStoreModal } from "@/hooks/use-store-modal";
 import { useEffect } from "react";
