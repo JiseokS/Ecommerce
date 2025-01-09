@@ -36,8 +36,10 @@ export const StoreModal = ()=>{
             setLoading(true);
 
             const response = await axios.post('/api/stores', values);
+            
+            //directly move to new page in "client" side. doesnt wait server response
+            window.location.assign(`/${response.data.id}`);
 
-            toast.success("Store created.");
         }catch(error){
             toast.error("Something went wrong.");
         }finally{
