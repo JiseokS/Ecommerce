@@ -32,9 +32,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         setIsMounted(true);
     },[])
 
-    const onUpload = (result: UploadResult | any) => {
-        if (result?.info?.secure_url) {
-            onChange(result.info.secure_url);
+    const onUpload = (result: unknown) => {
+        const UploadResult = result as UploadResult;
+        if (UploadResult?.info?.secure_url) {
+            onChange(UploadResult.info.secure_url);
         }
     }
 

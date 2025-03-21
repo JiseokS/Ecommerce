@@ -42,7 +42,7 @@ export const CellAction: React.FC<CellActionProps> = ({
             await axios.delete(`/api/${params.storeId}/sizes/${data.id}`);
             router.refresh();
             toast.success("Size deleted.");
-        }catch(error){
+        }catch{
             toast.error("Make sure you removed all products using this size first.")
         } finally{
             setLoading(false)

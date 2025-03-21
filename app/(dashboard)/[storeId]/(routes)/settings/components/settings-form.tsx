@@ -52,7 +52,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
             await axios.patch(`/api/stores/${params.storeId}`, data);
             router.refresh(); //resynchronize server component
             toast.success("Store updated.");
-        }catch(error){
+        }catch{
             toast.error("Something went wrong.");
         } finally{
             setLoading(false);
@@ -67,7 +67,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
             router.refresh();
             router.push("/");
             toast.success("Store deleted.");
-        }catch(error){
+        }catch{
             //If user have active categories and products, the store cannot be deleted
             toast.error("Make sure you removed all products and categories first.")
         } finally{

@@ -19,10 +19,10 @@ const ProductPage = async ({
     });
 
     // Convert the Decimal price to a number before passing to the client component
-    const formattedProduct = product ? {
-        ...product,
-        price: parseFloat(String(product.price))
-    } : null;
+    //const formattedProduct = product ? {
+    //    ...product,
+    //   price: parseFloat(String(product.price))
+    //} : null;
 
     const categories = await prismadb.category.findMany({
         where:{

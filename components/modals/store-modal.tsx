@@ -40,7 +40,7 @@ export const StoreModal = ()=>{
             //directly move to new page in "client" side. doesnt wait server response
             window.location.assign(`/${response.data.id}`);
 
-        }catch(error){
+        }catch{
             toast.error("Something went wrong.");
         }finally{
             setLoading(false);

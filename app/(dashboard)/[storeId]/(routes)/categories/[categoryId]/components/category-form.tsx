@@ -79,7 +79,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
             router.refresh(); //resynchronize server component
             router.push(`/${params.storeId}/categories`);
             toast.success(toastMessage);
-        }catch(error){
+        }catch{
             toast.error("Something went wrong.");
         } finally{
             setLoading(false);
@@ -94,7 +94,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
             router.refresh();
             router.push(`/${params.storeId}/categories`);
             toast.success("Category deleted.");
-        }catch(error){
+        }catch{
             //If user have active categories and products, the store cannot be deleted
             toast.error("Make sure you removed all products using this category first.")
         } finally{

@@ -23,7 +23,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { useParams, useRouter } from "next/navigation";
 import { AlertModal } from "@/components/modals/alert-modal";
-import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
     name: z.string().min(1),
@@ -74,7 +73,7 @@ export const ColorForm: React.FC<ColorFormProps> = ({
             router.refresh(); //resynchronize server component
             router.push(`/${params.storeId}/colors`);
             toast.success(toastMessage);
-        }catch(error){
+        }catch{
             toast.error("Something went wrong.");
         } finally{
             setLoading(false);
@@ -89,7 +88,7 @@ export const ColorForm: React.FC<ColorFormProps> = ({
             router.refresh();
             router.push(`/${params.storeId}/colors`);
             toast.success("Color deleted.");
-        }catch(error){
+        }catch{
             toast.error("Make sure you removed all products using this color first.")
         } finally{
             setLoading(false)

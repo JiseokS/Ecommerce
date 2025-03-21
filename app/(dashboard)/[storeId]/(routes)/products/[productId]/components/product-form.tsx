@@ -103,7 +103,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             router.refresh(); //resynchronize server component
             router.push(`/${params.storeId}/products`);
             toast.success(toastMessage);
-        }catch(error){
+        }catch{
             toast.error("Something went wrong.");
         } finally{
             setLoading(false);
@@ -118,7 +118,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             router.refresh();
             router.push(`/${params.storeId}/products`);
             toast.success("Product deleted.");
-        }catch(error){
+        }catch{
             //If user have active categories and products, the store cannot be deleted
             toast.error("Something went wrong");
         } finally{
@@ -266,7 +266,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                             <FormControl>
                                 <Checkbox
                                 checked={field.value}
-                                // @ts-ignore
+                                
                                 onCheckedChange={field.onChange}/>
                             </FormControl>
                             <div className="space-y-1 leading-none">
@@ -284,7 +284,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                             <FormControl>
                                 <Checkbox
                                 checked={field.value}
-                                // @ts-ignore
+                                
                                 onCheckedChange={field.onChange}/>
                             </FormControl>
                             <div className="space-y-1 leading-none">
